@@ -22,19 +22,19 @@ class Maze:
         for y in range(self.size[1] - 1, -1, -1):
             for x in range(0, self.size[0]):
                 str += "8"
-                if self.field[(x, y, 1)] == 1:
+                if self.field[(x, y, 2)] == 1:
                     str += "888"
                 else:
                     str += "   "
             str += "8\n"
 
             for x in range(0, self.size[0]):
-                if self.field[(x, y, 0)] == 1:
+                if self.field[(x, y, 1)] == 1:
                     str += "8"
                 else:
                     str += " "
                 str += "   "
-            if self.field[(self.size[0] - 1, y, 2)] == 1:
+            if self.field[(self.size[0] - 1, y, 0)] == 1:
                 str += "8\n"
             else:
                 str += " \n"

@@ -19,9 +19,9 @@ class Generator:
             current_cell = active_cells[-1]
 
             candidate_cells = [ \
+                ((current_cell[0] + 2, current_cell[1]    ), (current_cell[0] + 1, current_cell[1]    )), \
                 ((current_cell[0] - 2, current_cell[1]    ), (current_cell[0] - 1, current_cell[1]    )), \
                 ((current_cell[0]    , current_cell[1] + 2), (current_cell[0]    , current_cell[1] + 1)), \
-                ((current_cell[0] + 2, current_cell[1]    ), (current_cell[0] + 1, current_cell[1]    )), \
                 ((current_cell[0]    , current_cell[1] - 2), (current_cell[0]    , current_cell[1] - 1))]
 
             candidate_directions = []
@@ -62,9 +62,9 @@ class Generator:
             for y in range(0, self.size[1]):
                 current_cell = (x * 2 + 2, y * 2 + 2)
                 neighbor = [ \
+                    (current_cell[0] + 1, current_cell[1]    ), \
                     (current_cell[0] - 1, current_cell[1]    ), \
                     (current_cell[0]    , current_cell[1] + 1), \
-                    (current_cell[0] + 1, current_cell[1]    ), \
                     (current_cell[1]    , current_cell[1] - 1)]
                 for direction in range(0, 4):
                     if raw_field[neighbor[direction]] == 9:
