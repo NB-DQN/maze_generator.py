@@ -76,4 +76,3 @@ class Generator:
 
 if __name__ == '__main__':
     print(Generator((9, 9)).generate())
-    Generator((9,9)).generate()
