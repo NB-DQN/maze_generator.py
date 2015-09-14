@@ -18,36 +18,49 @@ class Maze:
         return self.field[coordinate][4]
 
     def display_cui(self):
-        str = ""
-        for y in range(self.size[1] - 1, -1, -1):
-            for x in range(0, self.size[0]):
-                str += "8"
-                if self.field[(x, y, 2)] == 1:
-                    str += "888"
-                else:
-                    str += "   "
-            str += "8\n"
+        display_str = "  "
+        for x in range(0, self.size[0]):
+            display_str += "  " + str(x) + " "
+        display_str += " \n"
 
+        for y in range(self.size[1] - 1, -1, -1):
+            display_str += "  "
+            for x in range(0, self.size[0]):
+                display_str += "8"
+                if self.field[(x, y, 2)] == 1:
+                    display_str += "888"
+                else:
+                    display_str += "   "
+            display_str += "8  \n"
+
+            display_str += str(y) + " "
             for x in range(0, self.size[0]):
                 if self.field[(x, y, 1)] == 1:
-                    str += "8"
+                    display_str += "8"
                 else:
-                    str += " "
-                str += "   "
+                    display_str += " "
+                display_str += "   "
             if self.field[(self.size[0] - 1, y, 0)] == 1:
-                str += "8\n"
+                display_str += "8"
             else:
-                str += " \n"
+                display_str += " "
+            display_str += " " + str(y) + "\n"
 
+        display_str += "  "
         for x in range(0, self.size[0]):
-            str += "8"
+            display_str += "8"
             if self.field[(x, 0, 3)] == 1:
-                str += "888"
+                display_str += "888"
             else:
-                str += "   "
-        str += "8\n"
+                display_str += "   "
+        display_str += "8\n"
 
-        print(str)
+        display_str += "  "
+        for x in range(0, self.size[0]):
+            display_str += "  " + str(x) + " "
+        display_str += " \n"
+
+        print(display_str)
 
 if __name__ == "__main__":
     Maze((9, 9)).display_cui()
