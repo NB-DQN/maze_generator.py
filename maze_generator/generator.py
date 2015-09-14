@@ -13,6 +13,7 @@ class Generator:
         # main backtracking loop
         # start from coordinate(0, 0) => field_cell(2, 2)
         active_cells = [(2, 2)]
+        field[active_cells[0]] = 0
         while len(active_cells) > 0:
             current_cell = active_cells[-1]
 
