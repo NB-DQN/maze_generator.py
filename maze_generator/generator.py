@@ -64,7 +64,7 @@ class Generator:
                     (current_cell[0] + 1, current_cell[1]    ), \
                     (current_cell[0] - 1, current_cell[1]    ), \
                     (current_cell[0]    , current_cell[1] + 1), \
-                    (current_cell[1]    , current_cell[1] - 1)]
+                    (current_cell[0]    , current_cell[1] - 1)]
                 for direction in range(0, 4):
                     if raw_field[neighbor[direction]] == 9:
                         field[x][y][direction] = 1
