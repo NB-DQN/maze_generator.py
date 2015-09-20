@@ -62,5 +62,14 @@ class Maze:
 
         print(display_str)
 
+    def dump_params(self):
+        csvstr = ""
+        for x in range(self.size[0]):
+            for y in range(self.size[1]):
+                csvstr += ",".join(str(int(i)) for i in self.field[(x, y)].tolist())
+                csvstr += ","
+            csvstr += "\n"
+        return csvstr
+
 if __name__ == "__main__":
     Maze((9, 9)).display_cui()
